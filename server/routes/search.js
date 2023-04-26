@@ -8,6 +8,7 @@ routes.post('/', async (req, res) => {
         {
           $match: {  
             $or: [
+              {'company.name': { $regex: searchTerm, $options: "i" } },
               { primaryText: { $regex: searchTerm, $options: 'i' }},
               { headline: { $regex: searchTerm, $options: 'i' } },
               { description: { $regex: searchTerm, $options: 'i' } },
