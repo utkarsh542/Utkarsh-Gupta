@@ -9,7 +9,7 @@ const SearchPage = () => {
   useEffect(() => {
     if (searchTerm) {
       axios
-        .post('/api/search', { searchTerm })
+        .post('localhost:5000/api/search/', { searchTerm })
         .then((res) => setAds(res.data))
         .catch((err) => console.error(err));
     } else {
